@@ -144,14 +144,14 @@
     const interval = setInterval(() => {
       count++;
 
-      fetch(`http://dz24pro.site/api/sms.php?number=${encodeURIComponent(number)}&message=Test`)
-        .then(res => res.text())
-        .then(data => {
-          responseBox.innerText = `✅ Sent ${count}/${limit}`;
-        })
-        .catch(err => {
-          responseBox.innerText = `❌ Error on ${count}: ${err}`;
-        });
+      fetch(`https://dz24pro.site/api/sms.php?number=${encodeURIComponent(number)}&message=Test`)
+  .then(res => res.text())
+  .then(data => {
+    responseBox.innerText = ` Sent ${count}/${limit}`;
+  })
+  .catch(err => {
+    responseBox.innerText = ` Error on ${count}: ${err}`;
+  });
 
       if (count >= limit) {
         clearInterval(interval);
